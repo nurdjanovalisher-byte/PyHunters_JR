@@ -15,7 +15,7 @@ class GPTService:
             cls._instance = super().__new__(cls)
         return cls._instance
 
-    def __init__(self, model: GPTModel = GPTModel.GPT_4_TURBO):
+    def __init__(self, model: GPTModel = GPTModel.GPT_5_MINI):
         self._gpt_token = config.OPENAI_API_KEY
         self._proxy = config.PROXY
         self._client = self._create_client()

@@ -130,12 +130,15 @@ async def user_answer(message: Message, state: FSMContext, bot: Bot):
         f"Ваш счёт: {topic_score} {word}!"
     )
 
-    await bot.edit_message_media(
-        media = InputMediaPhoto(
-            media = FSInputFile(Path.IMAGES.value.format(file='quiz')),
-            caption = final_text,
-        ),
-        chat_id = message.from_user.id,
-        message_id = message_id,
-        reply_markup = ikb_quiz_navigation()
-    )
+    try:
+        await bot.edit_message_media(
+            media=InputMediaPhoto(
+                media=FSInputFile(Path.IMAGES.value.format(file='quiz')),
+                caption=final_text,
+            ),
+            chat_id=message.from_user.id,
+            message_id=message_id,
+            reply_markup=ikb_quiz_navigation()
+        )
+    except Exception:
+        pass

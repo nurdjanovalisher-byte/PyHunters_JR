@@ -10,5 +10,6 @@ class GPTRole(Enum):
 class GPTModel(Enum):
     GPT_3_TURBO = 'gpt-3.5-turbo'
     GPT_4_TURBO = 'gpt-4-turbo'
+    GPT_5_MINI = 'gpt-5-mini'
     WHISPER = 'whisper-1'
     GPT_IMAGE = 'dall-e-3'
